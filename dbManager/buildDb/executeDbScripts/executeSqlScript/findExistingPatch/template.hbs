@@ -1,0 +1,5 @@
+SET search_path TO fbkt_core_db, public;
+
+SELECT * 
+FROM fbkt_db_patch
+WHERE file_name = '{{this.filename}}';

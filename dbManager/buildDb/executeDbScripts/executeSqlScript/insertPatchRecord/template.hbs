@@ -1,0 +1,5 @@
+set search_path to fbkt_core_db, public;
+
+INSERT INTO fbkt_db_patch(package_name, file_name, repatchable)
+SELECT '{{libName}}', '{{{filename}}}', {{repatchable}}
+;

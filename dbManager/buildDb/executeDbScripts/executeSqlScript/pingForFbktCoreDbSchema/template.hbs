@@ -1,0 +1,6 @@
+SELECT EXISTS (
+SELECT 1
+FROM   information_schema.tables
+WHERE  table_schema = 'fbkt_core_db'
+AND    table_name = 'fbkt_db_patch'
+);

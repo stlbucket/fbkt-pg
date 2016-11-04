@@ -1,0 +1,17 @@
+{{indent}},(   ---  DEPENDENCY: {{componentName}}
+{{indent}}{{spc}}SELECT row_to_json({{componentName}}) AS {{componentName}}
+{{indent}}{{spc}}FROM (
+{{#if selectFields}}
+    {{indent}}{{spc}}{{spc}}SELECT {{selectFields}}
+{{else}}
+    {{indent}}{{spc}}{{spc}}SELECT {{schemaName}}.{{tableName}}.*
+{{/if}}
+{{#if componentResults}}
+    {{#each componentResults}}
+        {{{this}}}
+    {{/each}}
+{{/if}}
+{{indent}}{{spc}}{{spc}}FROM {{schemaName}}.{{tableName}}
+{{indent}}{{spc}}{{spc}}WHERE id = {{parentTableName}}.{{fkField}}
+{{indent}}{{spc}}{{spc}}) {{componentName}}
+{{indent}}{{spc}})

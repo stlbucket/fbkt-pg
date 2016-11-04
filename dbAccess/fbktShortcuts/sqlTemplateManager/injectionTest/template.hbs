@@ -1,0 +1,10 @@
+SET search_path TO sql_inject_test, public;
+
+INSERT INTO inject(
+	text_field,
+	text_field_escaped
+	)
+SELECT 
+	'{{this.textData}}',
+	'{{{this.textData}}}'
+RETURNING *;

@@ -1,0 +1,19 @@
+{
+  "name": "fbkt-pg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node devServer dev",
+    "test": "node devServer dev runAllUnitTests",
+    "wipeDb": "node devServer dev wipeDb",
+    "buildDb": "node devServer dev buildDb"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fbkt": "^1.0.12",
+    "ramda": "^0.22.1"
+  }
+}

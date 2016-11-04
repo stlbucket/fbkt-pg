@@ -1,0 +1,17 @@
+{{indent}}{{spc}},(   ---  AGGREGATION: {{componentName}}
+{{indent}}{{spc}}{{spc}}SELECT array_to_json(array_agg(row_to_json({{tableName}}))) AS {{componentName}}
+{{indent}}{{spc}}{{spc}}FROM (
+{{#if selectFields}}
+    {{indent}}{{spc}}{{spc}}SELECT {{selectFields}}
+{{else}}
+    {{indent}}{{spc}}{{spc}}SELECT {{schemaName}}.{{tableName}}.*
+{{/if}}
+{{#if componentResults}}
+    {{#each componentResults}}
+        {{indent}}{{{this.output}}}
+    {{/each}}
+{{/if}}
+{{indent}}{{spc}}{{spc}}{{spc}}FROM {{schemaName}}.{{tableName}}
+{{indent}}{{spc}}{{spc}}{{spc}}WHERE {{fkField}} = {{parentTableName}}.id
+{{indent}}{{spc}}) {{tableName}}
+{{indent}}) {{componentName}}
