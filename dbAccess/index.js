@@ -10,4 +10,5 @@ module.exports = {
 	dbTree:	require('./getDbTree'),
 	entityManager:	require('./entityManager'),
 	fbktShortcuts:	require('./fbktShortcuts'),
+	serverExtensions:	require('./serverExtensions')
 };
