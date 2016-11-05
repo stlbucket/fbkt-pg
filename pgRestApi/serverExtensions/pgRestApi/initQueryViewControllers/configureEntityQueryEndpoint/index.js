@@ -3,11 +3,12 @@ const R = require('ramda');
 const Promise = require('bluebird');
 const fbkt = require('fbkt');
 
-const configurePostEndpoint = require('../../configureEndpoint/post');
 const entityQueryEndpointHandler = require('./entityQueryEndpointHandler');
 
 
 module.exports = (callInfo)=> {
+	const configurePostEndpoint = fbkt().restApiSupport.configureEndpoint.post;
+
 	return fbkt().FbktPipe({
 		name:           'configureEntityQueryEndpoint',
 		filename:       __filename,

@@ -3,10 +3,11 @@ const R = require('ramda');
 const Promise = require('bluebird');
 const fbkt = require('fbkt');
 
-const configureGetAllEndpoint = require('../../configureEndpoint/getAll');
 const buildEntityQueryInfo = require('./buildEntityQueryInfo');
 
 module.exports = (callInfo)=> {
+	const configureGetAllEndpoint = fbkt().restApiSupport.configureEndpoint.getAll;
+
 	return fbkt().FbktPipe({
 		name:           'UNNAMED FBKT PIPE',
 		filename:       __filename,

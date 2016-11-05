@@ -30,7 +30,7 @@ module.exports = function (callInfo) {
 		var entityName = self.callInfo.queryEntity.entityName;
 		var handler = new require('./userEntityFilterEndpointHandler')(self.callInfo);
 
-		return fbkt().fbktServer.controller.configureEndpoint.configureGetAllEndpoint({
+		return fbkt().restApiSupport.configureEndpoint.configureGetAllEndpoint({
 			url:	'/'+packageName+'/User'+entityName+'Filter',
 			auth:			'token',
 			handler:	handler
