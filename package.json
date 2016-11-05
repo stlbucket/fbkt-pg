@@ -1,6 +1,6 @@
 {
   "name": "fbkt-pg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fbkt": "^1.0.18",
     "ramda": "^0.22.1"
   }
 }

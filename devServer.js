@@ -6,7 +6,8 @@ let appLibs = {
 	dbAccess:		fbktpg.dbAccess,
 	coreDb:			fbktpg.coreDb,
 	dbManager:	fbktpg.dbManager,
-	pgRestApi:	fbktpg.pgRestApi
+	pgRestApi:	fbktpg.pgRestApi,
+	graphQLApi:	fbktpg.graphQLApi
 };
 
 

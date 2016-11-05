@@ -23,22 +23,24 @@ const initGraphQl = ()=> {
 
 				console.log('QUERIES', queryFields);
 				console.log('MUTATIONS', mutationFields);
-				
-				const schema = new GraphQLSchema({
-					query: new GraphQLObjectType({
-						name:   'Query',
-						fields: () => (queryFields)
-					}),
-					mutation:	new GraphQLObjectType({
-						name:		'Mutation',
-						fields:	() => (mutationFields)
-					})
-				});
 
-				fbkt().app.use('/graphql', graphqlHTTP({
-					schema: schema,
-					// graphiql: true
-				}));
+				if (R.keys(queryFields).length > 0 || R.keys(mutationFields).length > 0){
+					const schema = new GraphQLSchema({
+						query: new GraphQLObjectType({
+							name:   'Query',
+							fields: () => (queryFields)
+						}),
+						mutation:	new GraphQLObjectType({
+							name:		'Mutation',
+							fields:	() => (mutationFields)
+						})
+					});
+
+					fbkt().app.use('/graphql', graphqlHTTP({
+						schema: schema,
+						// graphiql: true
+					}));
+				}
 			}
 		}
 	}, {});
