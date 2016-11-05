@@ -103,21 +103,9 @@ module.exports = function(options) {
 	};
 
 	self.query = function (callInfo) {
-		// if(callInfo && callInfo.user && callInfo.user['0']){
-		// 	fbkt().clog("QUERY", callInfo, true);
-			// process.exit();
-		// }
 		callInfo = self.fixCallInfo(callInfo);
-		if (callInfo.tableNameWithSchema === 'fbkt_login.location'){
-			// fbkt().clog('CALL INFO', callInfo, true);
-			// callInfo.debugQuery = true;
-		}
 		return new knexQuery(callInfo)()
 			.then(function(result){
-				if (callInfo.tableNameWithSchema === 'fbkt_login.location'){
-					// fbkt().clog('ENTITY MANAGER RESULT', result, true);
-					// process.exit();
-				}
 				if (!result.error && result.callInfo.applyEntityScopeEnforcementPostQuery === true){
 					_.forEach(self.entityScopeEnforcement.columns, function(entityScopeEnforcement){
 						var sourceValue = dottie.get(result.callInfo, entityScopeEnforcement.sourceDataLocation);
@@ -148,8 +136,6 @@ module.exports = function(options) {
 	};
 
 	self.getAll = function (callInfo) {
-		//console.log("SELF: ", self);
-		//console.log("CALLINFO: ", callInfo);
 		return self.query(callInfo);
 	};
 
