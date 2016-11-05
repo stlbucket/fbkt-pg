@@ -5,7 +5,8 @@ const fbktpg = require('./index');
 let appLibs = {
 	dbAccess:		fbktpg.dbAccess,
 	coreDb:			fbktpg.coreDb,
-	dbManager:	fbktpg.dbManager
+	dbManager:	fbktpg.dbManager,
+	pgRestApi:	fbktpg.pgRestApi
 };
 
 

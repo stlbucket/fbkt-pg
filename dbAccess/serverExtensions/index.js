@@ -1,3 +1,3 @@
-module.exports = [
-	require('./initDbTree')
-];
+module.exports = {
+	initDbTree:	require('./initDbTree')
+};

@@ -3,9 +3,9 @@ module.exports = {
 	libRelativePath:	function(){
 		return __dirname;
 	},
-	serverExtensions:	[
-		require('./serverExtensions/fbktGraphQl')
-	],
+	// serverExtensions:	[
+	// 	require('./serverExtensions/fbktGraphQl')
+	// ],
 	customRestControllers: [
 		// require('./controllers/customRest/graphql')	
 	]

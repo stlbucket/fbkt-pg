@@ -4,13 +4,16 @@ const Promise = require('bluebird');
 const fbkt = require('fbkt');
 const _ = require('lodash');
 
-const configureGetAllEndpoint = require('../../../configureEndpoint/getAll');
-const configureGetOneEndpoint = require('../../../configureEndpoint/getOne');
-const configurePostEndpoint = require('../../../configureEndpoint/post');
-const configurePutEndpoint = require('../../../configureEndpoint/put');
-const configureDeleteEndpoint = require('../../../configureEndpoint/delete');
+
 
 module.exports = (callInfo)=> {
+	const configureEndpoint = fbkt().restApiSupport.configureEndpoint;
+	const configureGetAllEndpoint = configureEndpoint.getAll;
+	const configureGetOneEndpoint = configureEndpoint.getOne;
+	const configurePostEndpoint = configureEndpoint.post;
+	const configurePutEndpoint = configureEndpoint.put;
+	const configureDeleteEndpoint = configureEndpoint.delete;
+	
 	return fbkt().FbktPipe({
 		name:           'initEntityRestControllers/configureControllerEndpoints/table',
 		filename:       __filename,

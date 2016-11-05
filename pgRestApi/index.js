@@ -7,10 +7,8 @@ module.exports = {
 	fbktShortcuts:	{
 	},
 	customRestControllers:	[
-		require('./controller/customRest/fbkt'),
-		require('./controller/customRest/ping'),
 	],
 	serverExtensions:	[
-		require('./serverExtensions/initRestApi'),
+		require('./serverExtensions'),
 	],
 };

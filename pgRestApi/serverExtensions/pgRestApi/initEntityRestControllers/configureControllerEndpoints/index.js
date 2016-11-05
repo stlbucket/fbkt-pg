@@ -6,8 +6,8 @@ const _ = require('lodash');
 
 const _handlerMap = {
 	table:	require('./table'),
-	view:	require('./view'),
-	composite:	require('./composite'),
+	// view:	require('./view'),
+	// composite:	require('./composite'),
 };
 
 module.exports = (callInfo)=> {
@@ -18,7 +18,10 @@ module.exports = (callInfo)=> {
 		pipelineParams: {},
 		pipelineSteps: {  // any number of functions
 			"configureControllerEndpoints": function (callInfo) {
-				return _handlerMap[callInfo.params.entityType](callInfo);
+				// fbkt().clog('configureControllerEndpoints', callInfo, true);
+				return R.is(Function, _handlerMap[callInfo.params.entityType]) 
+					? _handlerMap[callInfo.params.entityType](callInfo)
+					: `NO ENTITY REST CONTROLLER FOR ENTITY TYPE: ${callInfo.params.entityType || 'NOT DEFINED'}`;
 			}
 		}
 	}, callInfo);
