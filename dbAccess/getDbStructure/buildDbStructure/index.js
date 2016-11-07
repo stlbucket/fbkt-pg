@@ -9,6 +9,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'getDbStructure.buildDbStructure',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			schemas:	"getSchemas",

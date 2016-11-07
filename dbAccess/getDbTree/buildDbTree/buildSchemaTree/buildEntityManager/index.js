@@ -10,6 +10,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildEntityManager',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {},
 		pipelineSteps:  {

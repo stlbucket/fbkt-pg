@@ -10,6 +10,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'initComposites',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {},
 		pipelineSteps:  {  // any number of functions
@@ -29,7 +30,7 @@ module.exports = (callInfo)=> {
 						};
 					}
 				}, allComposites);
-				
+
 				return dbTree;
 			}
 		}

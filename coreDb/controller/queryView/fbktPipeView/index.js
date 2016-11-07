@@ -6,5 +6,5 @@ module.exports = {
 		]
 	},
 	enabledDataViews:		[ 'grid' ], //, 'map',
-	compositeUrl:	'/FbktCoreDb/FbktPipeComposite'
+	compositeUrl:	'/fbktCoreDb/fbktPipeComposite'
 };

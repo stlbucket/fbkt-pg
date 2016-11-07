@@ -7,6 +7,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildCompositeView.buildSearchPath',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			searchPath:	"buildSearchPath"
@@ -39,7 +40,7 @@ module.exports = (callInfo)=> {
 					},
 					R.reject(schemaName=>schemaName==='public')
 				);
-				
+
 				return f(callInfo.params.searchPath);
 			}
 		}

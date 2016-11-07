@@ -8,11 +8,12 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildCompositeView.component.aggregation',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {},
 		pipelineSteps: {  // any number of function
 			"aggregation": function (callInfo) {
-				return fbkt().hbTemplateManager({ 
+				return fbkt().hbTemplateManager({
 					params: {
 						templateFilePath: `${__dirname}/template.hbs`,
 						templateData:     callInfo.params,

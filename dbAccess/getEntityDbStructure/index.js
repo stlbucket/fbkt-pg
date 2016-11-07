@@ -8,6 +8,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'dbAccess.getEntityDbStructure',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			dbStructure:	"getDbStructure"

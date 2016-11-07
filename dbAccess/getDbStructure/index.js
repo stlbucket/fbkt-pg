@@ -14,6 +14,7 @@ module.exports = (callInfo)=> {
 		return fbkt().FbktPipe({
 			name:           'getDbStructure',
 			filename:       __filename,
+			exitProcessOnError: true,
 			expectedParams: {},
 			pipelineParams: {
 				dbStructure:	"dbStructure",

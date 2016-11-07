@@ -9,6 +9,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildSchemaTree',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			"tableSchemaTree":	"buildTableSchemaTree"
@@ -30,8 +31,8 @@ module.exports = (callInfo)=> {
 									}
 								};
 								return R.mergeWith(
-									R.merge, 
-									schemaTree, 
+									R.merge,
+									schemaTree,
 									tableTree
 								)
 							});

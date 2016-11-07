@@ -12,6 +12,7 @@ module.exports = (callInfo)=>{
 	return fbkt().FbktPipe({
 		name:           'buildDb.executeDbScripts.executeSqlScript',
 		filename:       __filename,
+		exitProcessOnError:	true,
 		expectedParams: {
 		},
 		pipelineParams: {
@@ -24,7 +25,7 @@ module.exports = (callInfo)=>{
 			"pingForFbktCoreDbSchema":	(callInfo)=>{
 				return pingForFbktCoreDbSchema()
 					.then((result)=>{
-						return result[0].exists;
+						return R.isNil(result[0]) === false;
 					});
 			},
 			"findExistingPatches":	(callInfo)=>{
@@ -36,6 +37,7 @@ module.exports = (callInfo)=>{
 			},
 			"decideToExecute":	(callInfo)=>{
 				const existingPatches = callInfo.params.existingPatches || [];
+
 				if (existingPatches.length > 1 && callInfo.params.repatchable === false) {
 					throw fbkt().FbktCustomError(
 						"FbktExistingPatchError",

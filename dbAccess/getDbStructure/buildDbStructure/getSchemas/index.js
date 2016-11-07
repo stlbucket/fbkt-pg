@@ -10,12 +10,13 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'getSchemas',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			client:							"getClient",
 			schemas:						"getSchemas",
 			schemasWithTables:	"getTables"
-			
+
 		},
 		pipelineSteps:  {  // any number of functions
 			"getClient":	(callInfo)=>{

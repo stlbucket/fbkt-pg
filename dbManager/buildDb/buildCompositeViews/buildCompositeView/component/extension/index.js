@@ -8,6 +8,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildCompositeView.component.composite',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {},
 		pipelineSteps: {  // any number of functions

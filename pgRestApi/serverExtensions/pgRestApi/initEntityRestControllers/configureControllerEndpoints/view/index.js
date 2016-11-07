@@ -21,7 +21,7 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configureGetAllEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
@@ -31,14 +31,14 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configureGetOneEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
 						handler:    p.entityManager.findOne
 					}
 				}));
-				
+
 				return Promise.all(actionsAreConfigured);
 			}
 		}

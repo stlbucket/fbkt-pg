@@ -36,9 +36,9 @@ module.exports = (callInfo)=> {
 
 				return R.reduce(
 					(tree, entityDbStructure)=> {
-						const packageName = _.upperFirst(_.camelCase(entityDbStructure.schema));
-						const type = _.upperFirst(_.camelCase(entityDbStructure.type))
-						const entityName = _.upperFirst(_.camelCase(entityDbStructure.entityName));
+						const packageName = _.camelCase(entityDbStructure.schema);
+						const type = _.camelCase(entityDbStructure.type)
+						const entityName = _.camelCase(entityDbStructure.entityName);
 						const dbTreePath = `${entityDbStructure.schema}.${entityDbStructure.type}.${entityDbStructure.entityName}`;
 						const queryViewController = R.find(R.propEq('dbTreePath', dbTreePath), callInfo.params.queryViewControllers);
 						const filterTypes = R.reject(R.isNil, R.map((column)=> {

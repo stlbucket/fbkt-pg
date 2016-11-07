@@ -9,6 +9,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildDbTree',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			"dbTree":		"buildDbTree"

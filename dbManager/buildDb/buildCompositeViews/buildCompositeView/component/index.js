@@ -17,6 +17,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'buildDb.buildCompositeView.component',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			"indentLevel":	"getIndentLevel",
@@ -42,7 +43,7 @@ module.exports = (callInfo)=> {
 					},
 					callInfo.params.component.components || []
 				);
-				
+
 				if (components.length > 0){
 					return Promise.map(
 						components,
@@ -67,7 +68,7 @@ module.exports = (callInfo)=> {
 						indent:						new Array(callInfo.params.indentLevel + 1).join('  '),
 						schemaName:				callInfo.params.component.schemaName,
 						tableName:				callInfo.params.component.tableName,
-						componentResults:	callInfo.params.componentResults,	
+						componentResults:	callInfo.params.componentResults,
 						parentTableName:	callInfo.params.component.parentTableName,
 						fkField:					callInfo.params.component.fkField
 					}

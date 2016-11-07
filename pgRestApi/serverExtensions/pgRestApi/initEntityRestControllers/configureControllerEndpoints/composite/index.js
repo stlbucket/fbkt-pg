@@ -53,13 +53,13 @@ module.exports = (callInfo)=> {
 				var actionsAreConfigured = [];
 
 				const p = callInfo.params;
-				
+
 				const agent = new CompositeAgent(p.entityManager);
 				_compositeAgents.push(agent);
-				
+
 				actionsAreConfigured.push(configureGetAllEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+            url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
@@ -69,14 +69,14 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configureGetOneEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+            url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
 						handler:    agent.handleFindOneRequest.bind(agent)
 					}
 				}));
-				
+
 				return Promise.all(actionsAreConfigured);
 			}
 		}

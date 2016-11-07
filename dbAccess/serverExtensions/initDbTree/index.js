@@ -8,6 +8,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'loadDbTree',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {},
 		pipelineSteps:  {

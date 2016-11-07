@@ -19,10 +19,5 @@ module.exports = {
 	queryViewControllers:	[
 		require('./controller/queryView/logEntryView'),
 		require('./controller/queryView/fbktPipeView')
-	],	
-	customRestControllers:	[
-		// require('./controller/customRest/throwTestError'),
-		// require('./controller/customRest/returnTestError'),
-		// require('./controller/customRest/returnTestValue'),
-	]
+	],
 };

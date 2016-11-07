@@ -20,21 +20,21 @@ module.exports = (callInfo)=> {
 							const useEntityName = entityType !== 'composite' ? entityName : `${entityName}_composite`;
 							const useEntityType = entityType !== 'composite' ? entityType : `view`;
 							const useEntityManagerName = entityType !== 'composite' ? entityName : `${useEntityName}_view`;
-							
+
 							const entityManager = fbkt().dbTree[schema][useEntityType][useEntityManagerName];
-							
+
 							if (R.isNil(entityManager)){
 								console.log('EM', entityManager, schema, entityType, entityName, useEntityName);
 								process.exit();
 							}
 
 							return {
-									url:           `/${_.upperFirst(_.camelCase(schema))}/${_.upperFirst(_.camelCase(useEntityName))}`,
-									schema:        schema,
-									entityType:    entityType,
-									tableName:     useEntityName,
-									entityManager: entityManager
-								}
+								url:           `/${_.camelCase(schema)}/${_.camelCase(useEntityName)}`,
+								schema:        schema,
+								entityType:    entityType,
+								tableName:     useEntityName,
+								entityManager: entityManager
+							}
 						});
 					});
 				})));

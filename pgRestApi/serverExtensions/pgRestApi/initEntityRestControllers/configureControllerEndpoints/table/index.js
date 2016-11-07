@@ -13,7 +13,7 @@ module.exports = (callInfo)=> {
 	const configurePostEndpoint = configureEndpoint.post;
 	const configurePutEndpoint = configureEndpoint.put;
 	const configureDeleteEndpoint = configureEndpoint.delete;
-	
+
 	return fbkt().FbktPipe({
 		name:           'initEntityRestControllers/configureControllerEndpoints/table',
 		filename:       __filename,
@@ -27,7 +27,7 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configureGetAllEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
@@ -37,7 +37,7 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configureGetOneEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
@@ -47,7 +47,7 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configurePostEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
@@ -57,7 +57,7 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configurePutEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,
@@ -67,7 +67,7 @@ module.exports = (callInfo)=> {
 
 				actionsAreConfigured.push(configureDeleteEndpoint({
 					params: {
-						url:        `/${_.upperFirst(_.camelCase(p.schema))}/${_.upperFirst(_.camelCase(p.tableName))}`,
+						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
 						entityType: p.entityType,
 						tableName:  p.tableName,

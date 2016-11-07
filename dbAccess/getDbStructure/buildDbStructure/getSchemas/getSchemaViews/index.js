@@ -9,6 +9,7 @@ module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
 		name:           'getSchemaViews',
 		filename:       __filename,
+		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {
 			"schemaViews":	"getSchemaViews"

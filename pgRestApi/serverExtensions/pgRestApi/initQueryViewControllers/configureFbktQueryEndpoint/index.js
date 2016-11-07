@@ -9,7 +9,7 @@ module.exports = (callInfo)=> {
 	const configureGetAllEndpoint = fbkt().restApiSupport.configureEndpoint.getAll;
 
 	return fbkt().FbktPipe({
-		name:           'UNNAMED FBKT PIPE',
+		name:           'configureFbktQueryEndpoing',
 		filename:       __filename,
 		expectedParams: {},
 		pipelineParams: {
@@ -22,7 +22,7 @@ module.exports = (callInfo)=> {
 
 				return configureGetAllEndpoint({
 					params: {
-						url: '/QueryInfo',
+						url: '/queryInfo',
 						handler:  (callInfo)=> {
 							return fbkt().queryEntitiesEndpoints;
 						}

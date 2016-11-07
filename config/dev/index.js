@@ -12,7 +12,7 @@ module.exports = R.merge(appConfig, {
 			user: 'postgres',
 			password: 'fbktp@$sword',
 			charset: 'utf8',
-			database: 'z_fbkt_pg_dev'
+			database: 'fbkt_pg_dev'
 		},
 		debug: false,
 	}
