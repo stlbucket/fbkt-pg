@@ -1,6 +1,6 @@
 const fbkt = require('fbkt');
-const tasks = fbkt(null,null,true).tasks;
 const wipeDb = require('../../wipeDb');
+const tasks = fbkt.baseCommandMap.tasks;
 
 module.exports = {
 	description: [
