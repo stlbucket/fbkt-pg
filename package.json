@@ -1,13 +1,13 @@
 {
   "name": "fbkt-pg",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node devServer dev",
-    "test": "node devServer dev runAllUnitTests",
-    "wipeDb": "node devServer dev wipeDb",
-    "buildDb": "node devServer dev buildDb"
+    "dev": "NODE_ENV=dev node devServer dev",
+    "test": "NODE_ENV=test node devServer dev runAllUnitTests",
+    "wipeDb": "NODE_ENV=buildDb node devServer dev wipeDb",
+    "buildDb": "NODE_ENV=buildDb node devServer dev buildDb"
   },
   "keywords": [],
   "author": "",
