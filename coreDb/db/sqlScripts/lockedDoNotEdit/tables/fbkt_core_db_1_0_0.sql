@@ -8,17 +8,17 @@ SET search_path TO fbkt_core_db ,public;
 --||--
 CREATE TABLE IF NOT EXISTS fbkt_db_info
 (
-	id 			serial NOT NULL,
-	target			varchar(200) NOT NULL,
+	id 			            serial NOT NULL,
+	target			        text NOT NULL,
 	last_patch_timestamp	timestamp NOT NULL DEFAULT now(),
 	CONSTRAINT pk_fbkt_db_info PRIMARY KEY (id)
 );
 --||--
 CREATE TABLE IF NOT EXISTS fbkt_db_patch
 (
-	id 				serial NOT NULL,
-	package_name			character varying(100) NOT NULL,
-	file_name 			character varying(100) NOT NULL,
+	id 				    serial NOT NULL,
+	package_name		text NOT NULL,
+	file_name 			text NOT NULL,
 	repatchable			boolean NOT NULL default false,
 	applied_timestamp 		timestamp NOT NULL DEFAULT now(),
 	attributes_json			text NOT NULL DEFAULT '{}',
