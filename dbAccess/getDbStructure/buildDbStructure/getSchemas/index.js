@@ -29,7 +29,7 @@ module.exports = (callInfo)=> {
 					.select('*')
 					.withSchema('information_schema')
 					.then(function (schemas) {
-						const schemaNames = fbkt().getConfigValue('schemas') || null;
+						const schemaNames = fbkt().getComponentFromAllLibs('schema') || null;
 						// fbkt().clog('schemaNames', schemaNames);
 						// fbkt().clog('schemas', schemas);
 						const retval = schemaNames ? R.filter(function (schema) {

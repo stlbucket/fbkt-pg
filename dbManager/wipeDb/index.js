@@ -15,7 +15,7 @@ module.exports = (callInfo)=>{
 		},
 		pipelineSteps: {  // any number of functions
 			"wipeSchemas":	()=> {
-				const schemas = fbkt().getConfigValue('schemas', []);
+				const schemas = fbkt().getComponentFromAllLibs('schema', []);
 				return Promise.each(schemas,
 					(schema)=> {
 						return wipeSchema({
