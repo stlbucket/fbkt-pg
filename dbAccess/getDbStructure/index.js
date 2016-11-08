@@ -8,9 +8,12 @@ const buildDbStructure = require('./buildDbStructure');
 let _dbStructure = null;
 
 module.exports = (callInfo)=> {
-	if (_dbStructure) {
+  const {params={}} = callInfo || {};
+
+	if (_dbStructure && params.rebuild !== true) {
 		return Promise.resolve(_dbStructure);
 	} else {
+    _dbStructure = null;
 		return fbkt().FbktPipe({
 			name:           'getDbStructure',
 			filename:       __filename,
@@ -28,6 +31,8 @@ module.exports = (callInfo)=> {
 					return _dbStructure = callInfo.params.dbStructure;
 				}
 			}
-		}, callInfo || {});
+		}, {
+      params: params
+    });
 	}
 };

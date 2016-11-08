@@ -21,7 +21,6 @@ module.exports = (callInfo)=> {
 		pipelineSteps: {
 			"getDbStructure": getDbStructure,
 			"getDbTree": (callInfo)=> {
-				// fbkt().clog('getDbTree', _dbTree, callInfo);
 				if (callInfo.params.rebuild === true) {
 					_dbTree = null;
 				}
