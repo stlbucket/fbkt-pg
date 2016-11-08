@@ -33,7 +33,7 @@ const initControllers = (callInfo)=>{0
 };
 
 module.exports = (callInfo)=>{
-	if (fbkt().executionMode !== 'BUILD_DB'){
+  if (process.env.NODE_ENV !== 'buildDb'){
 		return initControllers(callInfo);
 	} else {
 		return 'NO CONTROLLERS';
