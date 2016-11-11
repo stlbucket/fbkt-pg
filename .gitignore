@@ -27,6 +27,7 @@ ignoreAllThis
 .idea/
 npm-debug.*
 
+.DS*
 
 
 scripts/appClient/src/WL/views/dashboard/wlDashboardView.map.js

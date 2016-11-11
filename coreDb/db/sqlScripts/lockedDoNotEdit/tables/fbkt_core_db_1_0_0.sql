@@ -27,6 +27,14 @@ CREATE TABLE IF NOT EXISTS fbkt_db_patch
 -- 	CONSTRAINT fbkt_db_patch_ukey UNIQUE (package_name, file_name)
 );
 --||--
+CREATE TABLE IF NOT EXISTS ping_request
+(
+  id serial NOT NULL,
+  uid uuid UNIQUE NOT NULL,
+  request_timestamp TIMESTAMP NOT NULL DEFAULT now(),
+  CONSTRAINT pk_ping_request_id PRIMARY KEY (id)
+);
+--||--
 CREATE TABLE IF NOT EXISTS log_category
 (
   id serial NOT NULL,

@@ -17,8 +17,11 @@ module.exports = {
 		require('./composite/fbktPipe'),
 		require('./composite/logEntry')
 	],
+  customRestControllers: [
+  ],
 	queryViewControllers:	[
 		require('./controller/queryView/logEntryView'),
 		require('./controller/queryView/fbktPipeView')
 	],
+  serverExtensions: require('./serverExtensions')
 };

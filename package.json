@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fbkt": "^1.0.30",
+    "fbkt": "^1.0.36",
     "ramda": "^0.22.1"
   }
 }
