@@ -16,7 +16,8 @@ const initControllers = (callInfo)=>{0
 		},
 		pipelineSteps: {  // any number of functions
 			"initEntityRestControllers":	(callInfo)=>{
-				if (fbkt().dbTree){
+        const disableEntityRestControllers = fbkt().config.disableEntityRestControllers || false;
+				if (fbkt().dbTree && disableEntityRestControllers === false){
 					return initEntityRestControllers(callInfo);
 				}
 			},
