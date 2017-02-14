@@ -1,6 +1,6 @@
 let Fbkt = require('fbkt');
 const fbktpg = require('./index');
-let config = require('./config/dev');
+let config = require('./config');
 
 let appLibs = {
 	dbAccess:		fbktpg.dbAccess,
