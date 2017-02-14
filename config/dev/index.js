@@ -1,20 +1,24 @@
 const appConfig = require('../index');
 const R = require('ramda');
+require('dotenv-safe').load({
+  allowEmptyValues: false,
+  sample: './.env.example'
+});
 
 module.exports = R.merge(appConfig, {
-	appRouteFilter:	'*',
-	restErrorMode:	'OPEN',
-	dbAccess:	{
-		client: 'postgres',
+	appRouteFilter: process.env.APP_ROUTE_FILTER,
+	restErrorMode: process.env.REST_ERROR_MODE,
+  defaultEntityControllerAuth: process.env.DEFAULT_ENTITY_CONTROLLER_AUTH,
+  dbAccess:	{
+		client: process.env.DB_CLIENT,
 		connection: {
-			host: '127.0.0.1',
-			port: '5432',
-			user: 'postgres',
-			password: 'fbktp@$sword',
-			charset: 'utf8',
-			database: 'fbkt_pg_dev'
+			host: process.env.DB_CONNECTION_HOST,
+			port: process.env.DB_CONNECTION_PORT,
+			user: process.env.DB_CONNECTION_USER,
+			password: process.env.DB_CONNECTION_PASSWORD,
+			charset: process.env.DB_CONNECTION_CHARSET,
+			database: process.env.DB_CONNECTION_DATABASE
 		},
-		debug: false,
+		debug: process.env.DB_DEBUG === 'true',
 	}
-	,defaultEntityControllerAuth:	'none'
 });
