@@ -1,4 +1,4 @@
-var uuid = require('node-uuid');
+var uuid = require('uuid');
 var util = require('util');
 var should = require('should');
 var _ = require('lodash');
