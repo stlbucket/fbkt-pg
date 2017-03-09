@@ -8,7 +8,7 @@
 {{/if}}
 {{#if componentResults}}
     {{#each componentResults}}
-        {{indent}}{{{this}}}
+        {{indent}}{{{this.output}}}
     {{/each}}
 {{/if}}
 {{indent}}{{spc}}{{spc}}{{spc}}FROM {{schemaName}}.{{tableName}}

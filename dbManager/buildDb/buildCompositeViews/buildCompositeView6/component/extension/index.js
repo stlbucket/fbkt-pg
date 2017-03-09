@@ -6,23 +6,23 @@ const fbkt = require('fbkt');
 
 module.exports = (callInfo)=> {
 	return fbkt().FbktPipe({
-		name:           'buildCompositeView.component.aggregation',
+		name:           'buildCompositeView.component.composite',
 		filename:       __filename,
 		exitProcessOnError: true,
 		expectedParams: {},
 		pipelineParams: {},
-		pipelineSteps: {  // any number of function
-			"aggregation": function (callInfo) {
-        fbkt().clog('AGGREGATE', callInfo, true);
+		pipelineSteps: {  // any number of functions
+			"extension": function (callInfo) {
+				//fbkt().clog('GENERATING COMPOSITE SUBQUERY', self.options, true);
 				return fbkt().hbTemplateManager({
-					params: {
+					params:{
 						templateFilePath: `${__dirname}/template.hbs`,
 						templateData:     callInfo.params,
 						executionMode:    'PROD',
-						reportFileName:   './ignoreAllThis/cvgAggregationTemplateOutput.txt'
+						reportFileName:   './ignoreAllThis/cvgCompositeTemplateOutput.txt'
 					}
 				});
 			}
 		}
-	}, callInfo);
+	}, callInfo || {});
 };

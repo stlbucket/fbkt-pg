@@ -21,8 +21,7 @@ module.exports = (callInfo)=> {
 		expectedParams: {},
 		pipelineParams: {
 			"indentLevel":	"getIndentLevel",
-			"componentResults":	"processComponents",
-      "entityResult": "processEntity"
+			"componentResults":	"processComponents"
 		},
 		pipelineSteps: {  // any number of functions
 			"getIndentLevel":	(callInfo)=>{
@@ -46,7 +45,7 @@ module.exports = (callInfo)=> {
 				);
 
 				if (components.length > 0){
-					return Promise.map(
+					return Promise.mapSeries(
 						components,
 						(component)=>{
 							return module.exports(component)
@@ -56,7 +55,7 @@ module.exports = (callInfo)=> {
 						}
 					);
 				} else {
-					return Promise.resolve('NO SUB COMPONENTS');
+					return 'NO SUB COMPONENTS';
 				}
 			},
 			"processEntity":	(callInfo)=>{
@@ -74,11 +73,7 @@ module.exports = (callInfo)=> {
 						fkField:					callInfo.params.component.fkField
 					}
 				});
-			},
-      "entityResult": callInfo => {
-        // fbkt().clog('ENTITY RESULT', callInfo.params, true);
-        return callInfo.params.entityResult;
-      }
+			}
 		}
 	}, callInfo || {});
 };

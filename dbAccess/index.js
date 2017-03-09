@@ -5,6 +5,7 @@ module.exports = {
 	},
 	client:			require('./client.js'),
 	query:			require('./query.js'),
+  bookshelf:  require('./bookshelf'),
 	getDbStructure:	require('./getDbStructure'),
 	getEntityDbStructure:	require('./getEntityDbStructure'),
 	dbTree:	require('./getDbTree'),

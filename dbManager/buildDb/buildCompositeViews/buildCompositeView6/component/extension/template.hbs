@@ -1,4 +1,4 @@
-{{indent}},(   ---  DEPENDENCY: {{componentName}}
+{{indent}},(   ---  EXTENSION: {{componentName}}
 {{indent}}{{spc}}SELECT row_to_json({{componentName}}) AS {{componentName}}
 {{indent}}{{spc}}FROM (
 {{#if selectFields}}
@@ -12,6 +12,6 @@
     {{/each}}
 {{/if}}
 {{indent}}{{spc}}{{spc}}FROM {{schemaName}}.{{tableName}}
-{{indent}}{{spc}}{{spc}}WHERE id = {{parentTableName}}.{{fkField}}
+{{indent}}{{spc}}{{spc}}WHERE {{parentTableName}}.id = {{fkField}}
 {{indent}}{{spc}}{{spc}}) {{componentName}}
 {{indent}}{{spc}})

@@ -13,7 +13,6 @@ module.exports = (callInfo)=> {
 		pipelineParams: {},
 		pipelineSteps: {  // any number of function
 			"aggregation": function (callInfo) {
-        fbkt().clog('AGGREGATE', callInfo, true);
 				return fbkt().hbTemplateManager({
 					params: {
 						templateFilePath: `${__dirname}/template.hbs`,
