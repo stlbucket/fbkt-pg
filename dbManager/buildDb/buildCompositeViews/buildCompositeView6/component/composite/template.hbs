@@ -1,8 +1,0 @@
-{{indent}},(   ---  COMPOSITE: {{componentName}}
-{{indent}}{{spc}}SELECT composite AS {{componentName}}
-{{indent}}{{spc}}FROM (
-{{indent}}{{spc}}{{spc}}SELECT composite
-{{indent}}{{spc}}{{spc}}FROM {{schemaName}}.{{tableName}}
-{{indent}}{{spc}}{{spc}}WHERE id = {{parentTableName}}.{{fkField}}
-{{indent}}{{spc}}{{spc}}) composite
-{{indent}}{{spc}})

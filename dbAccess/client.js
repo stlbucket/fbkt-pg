@@ -7,7 +7,7 @@ var fbkt = require('fbkt');
 var _connectionInfo = null;
 
 module.exports = function(){
-	_connectionInfo = fbkt().getConfigValue('dbAccess');
+	_connectionInfo = fbkt().config.dbAccess;
 
 	if (_client){
 		//console.log('========POSTGRES CLIENT ALREADY CONNECTED=============');
