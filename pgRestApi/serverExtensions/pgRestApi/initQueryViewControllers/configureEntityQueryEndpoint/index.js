@@ -24,7 +24,7 @@ module.exports = (callInfo)=> {
 				
 				return configurePostEndpoint({
 					params:{
-						url: 			'/' + schema + '/Query' + entityName,
+						url: 			'/' + schema + '/' + fbkt().config.apiVersion + '/query_' + entityName,
 						handler:  handler
 					}
 				});
