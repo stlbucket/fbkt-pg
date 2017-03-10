@@ -43,8 +43,6 @@ module.exports = (callInfo)=> {
 	const configureEndpoint = fbkt().restApiSupport.configureEndpoint;
 	const configureGetAllEndpoint = configureEndpoint.getAll;
 	const configureGetOneEndpoint = configureEndpoint.getOne;
-  const agent = new CompositeAgent(p.entityManager);
-  _compositeAgents.push(agent);
 
   return fbkt().FbktPipe({
 		name:           'initEntityRestControllers/configureControllerEndpoints/composite',
@@ -56,8 +54,10 @@ module.exports = (callInfo)=> {
 				var actionsAreConfigured = [];
 
 				const p = callInfo.params;
+        const agent = new CompositeAgent(p.entityManager);
+        _compositeAgents.push(agent);
 
-				actionsAreConfigured.push(configureGetAllEndpoint({
+        actionsAreConfigured.push(configureGetAllEndpoint({
 					params: {
 						url:        `/${_.camelCase(p.schema)}/${_.camelCase(p.tableName)}`,
 						schema:     p.schema,
