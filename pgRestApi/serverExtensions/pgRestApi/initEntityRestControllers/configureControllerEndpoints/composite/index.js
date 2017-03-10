@@ -16,7 +16,7 @@ const CompositeAgent = class {
     return this.getAllHandler(callInfo)
       .then((result)=> {
         // console.log('GET ALL COMPOSITE RESULT', result);
-        return result.composite;
+        return result.map(item => item.composite);
       })
       .catch((error)=> {
         console.log('GET ALL COMPOSITE ERROR', error);
