@@ -14,12 +14,14 @@ module.exports = (callInfo)=>{
 		},
 		pipelineSteps: {  // any number of functions
 			"insertPatchRecord": function (callInfo) {
-				return fbkt().sqlTemplateManager({
+        const split = callInfo.params.filename.split('/');
+        const filename = callInfo.params.libName + '/' + split.slice(split.length-1)[0];
+        return fbkt().sqlTemplateManager({
 					params:	{
 						templateFilePath:	`${__dirname}/template.hbs`,
 						templateData:			{ 
 							libName:	callInfo.params.libName,
-							filename:	callInfo.params.filename,
+							filename:	filename,
 							repatchable:	callInfo.params.repatchable
 						},
 						executionMode: 		'REPORTIT',

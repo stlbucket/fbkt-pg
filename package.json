@@ -1,13 +1,14 @@
 {
   "name": "fbkt-pg",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server --NODE_ENV dev",
     "test": "node server --NODE_ENV test --command runAllUnitTests",
     "wipeDb": "node server --NODE_ENV buildDb --command wipeDb",
-    "buildDb": "node server --NODE_ENV buildDb --command buildDb"
+    "buildDb": "node server --NODE_ENV buildDb --command buildDb",
+    "patchDb": "node server --NODE_ENV buildDb --command patchDb"
   },
   "keywords": [],
   "author": "",

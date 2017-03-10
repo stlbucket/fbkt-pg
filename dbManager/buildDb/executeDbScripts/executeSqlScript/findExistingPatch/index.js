@@ -22,12 +22,16 @@ module.exports = (callInfo)=>{
       },
 			"findExistingPatch": function (callInfo) {
 				if (R.is(Object, fbkt().dbTree.fbkt_core_db)){
-					return fbkt().sqlTemplateManager({
+          const split    = callInfo.params.filename.split('/');
+          const filename = callInfo.params.libName + '/' + split.slice(split.length - 1)[0];
+          return fbkt().sqlTemplateManager({
 						params:	{
 							templateFilePath: `${__dirname}/template.hbs`,
-							templateData:			callInfo.params,
+							templateData:			{
+                filename: filename
+              },
 							executionMode: 		'REPORTIT',
-							reportFileName:		'./ignoreAllThis/insertPatchRecordTemplateOutput.txt',
+							reportFileName:		'./ignoreAllThis/findExistingPatchRecordTemplateOutput.txt',
 						}
 					});
 				} else {
