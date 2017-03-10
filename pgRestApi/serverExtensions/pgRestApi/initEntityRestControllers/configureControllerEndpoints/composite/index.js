@@ -28,7 +28,7 @@ const CompositeAgent = class {
     return this.findOneHandler(callInfo)
       .then((result)=> {
         // fbkt().clog('FIND ONE COMPOSITE RESULT', result, true);
-        return result.composite;
+        return result ? result.composite : null;
       })
       .catch((error)=> {
         console.log('FIND ONE COMPOSITE ERROR', error);
