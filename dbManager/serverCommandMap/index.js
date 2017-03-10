@@ -1,4 +1,5 @@
 module.exports = {
 	buildDb:	require('./buildDb'),
-	wipeDb:		require('./wipeDb')
+	wipeDb:		require('./wipeDb'),
+  patchDb:  require('./patchDb')
 };
