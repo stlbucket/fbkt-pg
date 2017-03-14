@@ -7,7 +7,7 @@ const getAll = require('./getAll');
 const findOne = require('./findOne');
 
 module.exports = (callInfo)=> {
-	return fbkt().FbktPipe({
+  return fbkt().FbktPipe({
 		name:           'initComposites',
 		filename:       __filename,
 		exitProcessOnError: true,
