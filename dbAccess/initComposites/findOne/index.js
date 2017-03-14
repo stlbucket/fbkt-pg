@@ -19,10 +19,9 @@ module.exports = R.curry((composite, callInfo)=> {
           .view[composite.tableName + '_composite_view']
           .findOne(callInfo)
           .then(function (viewResult) {
-            fbkt().clog('viewResult', viewResult, true);
-            process.exit();
+            // fbkt().clog('viewResult', viewResult, true);
             return viewResult ?
-              R.is(Error, viewResult) ? viewResult : viewResult
+              R.is(Error, viewResult) ? viewResult : viewResult.composite
               : null;
           });
       }
