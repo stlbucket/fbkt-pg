@@ -13,15 +13,7 @@ module.exports = {
 		`${__dirname}/db/sqlScripts/unlocked/views/log_entry_category_source_view.sql`,
 		`${__dirname}/db/sqlScripts/unlocked/views/fbkt_pipe_view.sql`,
 	],
-	composites:	[
-		require('./composite/fbktPipe'),
-		require('./composite/logEntry')
-	],
   customRestControllers: [
   ],
-	queryViewControllers:	[
-		require('./controller/queryView/logEntryView'),
-		require('./controller/queryView/fbktPipeView')
-	],
   serverExtensions: require('./serverExtensions')
 };

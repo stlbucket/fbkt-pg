@@ -7,7 +7,6 @@ const _ = require('lodash');
 const _handlerMap = {
 	table:	require('./table'),
 	// view:	require('./view'),
-	composite:	require('./composite'),
 };
 
 module.exports = (callInfo)=> {

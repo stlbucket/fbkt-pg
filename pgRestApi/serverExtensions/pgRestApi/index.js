@@ -4,7 +4,6 @@ const Promise = require('bluebird');
 const fbkt = require('fbkt');
 
 const initEntityRestControllers = require('./initEntityRestControllers');
-const initQueryViewControllers = require('./initQueryViewControllers');
 
 const initControllers = (callInfo)=>{0
 	return fbkt().FbktPipe({
@@ -19,11 +18,6 @@ const initControllers = (callInfo)=>{0
         const disableEntityRestControllers = fbkt().config.disableEntityRestControllers || false;
 				if (fbkt().dbTree && disableEntityRestControllers === false){
 					return initEntityRestControllers(callInfo);
-				}
-			},
-			"initQueryViewControllers":	(callInfo)=>{
-				if (fbkt().dbTree){
-					return initQueryViewControllers(callInfo);
 				}
 			},
 			"captureAppRoutes":	()=>{

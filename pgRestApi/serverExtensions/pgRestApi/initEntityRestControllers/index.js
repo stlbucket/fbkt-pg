@@ -17,9 +17,9 @@ module.exports = (callInfo)=> {
 				const endpointsAreConfigured = R.values(R.flatten(R.keys(fbkt().dbTree).map((schema)=> {
 					return R.keys(fbkt().dbTree[schema]).map((entityType)=> {
 						return R.keys(fbkt().dbTree[schema][entityType]).map((entityName)=> {
-							const useEntityName = entityType !== 'composite' ? entityName : `${entityName}_composite`;
-							const useEntityType = entityType !== 'composite' ? entityType : `view`;
-							const useEntityManagerName = entityType !== 'composite' ? entityName : `${useEntityName}_view`;
+							const useEntityName = entityName;
+							const useEntityType = entityType;
+							const useEntityManagerName = entityName;
 
 							const entityManager = fbkt().dbTree[schema][useEntityType][useEntityManagerName];
 

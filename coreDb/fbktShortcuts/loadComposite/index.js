@@ -24,12 +24,12 @@ module.exports = (callInfo)=> {
 					}
 				});
 			},
-			"processSqlResult": function (callInfo) {
-				if (typeof callInfo.params.sqlResult !== 'object') {
-					throw fbkt().FbktCustomError("FbktCompositeLoadError", "Expected scalar composite result");
-				}
-				return fbkt().object.camelCase(callInfo.params.sqlResult.composite);
-			}
+			// "processSqlResult": function (callInfo) {
+			// 	if (typeof callInfo.params.sqlResult !== 'object') {
+			// 		throw fbkt().FbktCustomError("FbktCompositeLoadError", "Expected scalar composite result");
+			// 	}
+			// 	return fbkt().object.camelCase(callInfo.params.sqlResult.composite);
+			// }
 		}
 	}, callInfo || {});
 };

@@ -39,8 +39,7 @@ module.exports = (callInfo)=> {
 					},
 					{
 						table:	{},
-						view:	{},
-						composite:	{}
+						view:	{}
 					}
 				);
 			},

@@ -5,7 +5,6 @@ const fbkt = require('fbkt');
 const when = require('when');
 
 const executeDbScripts = require('./executeDbScripts');
-const buildCompositeViews = require('./buildCompositeViews');
 const loadBuildDbDataNotOptional = require('./loadBuildDbDataNotOptional');
 
 module.exports = (callInfo)=>{
@@ -16,7 +15,6 @@ module.exports = (callInfo)=>{
 		pipelineParams: {},
 		pipelineSteps:  {  // any number of functions
 			"executeDbScripts":           executeDbScripts,
-			"buildCompositeViews":        buildCompositeViews,
 			"loadDbTree":                 (callInfo)=> {
 				return fbkt().libs.dbAccess.dbTree({
 					params: {
