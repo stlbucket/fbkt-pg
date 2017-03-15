@@ -1,6 +1,6 @@
 {
   "name": "fbkt-pg",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "dotenv-safe": "^4.0.3",
     "dottie": "^2.0.0",
-    "fbkt": "^1.0.36",
+    "fbkt": "^2.0.0",
     "ramda": "^0.22.1"
   },
   "devDependencies": {
