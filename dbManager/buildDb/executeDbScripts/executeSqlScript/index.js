@@ -72,7 +72,7 @@ module.exports = (callInfo)=>{
 								process.exit();
 							}
 
-							console.log('SQL SCRIPT EXECUTED: ', callInfo.params.filename);
+							fbkt().clog('SQL SCRIPT EXECUTED: ', callInfo.params.filename, true);
 							return output;
 						});
 				} else {
