@@ -15,7 +15,7 @@ module.exports = function(){
 	} else {
 		var _ciDisplay = _.cloneDeep(_connectionInfo);
 		delete _ciDisplay.connection.password;
-		console.log('CONNECTION INFO', _ciDisplay);
+		// console.log('CONNECTION INFO', _ciDisplay);
 		_client = knex(_connectionInfo);
 
 		// console.log('CLIENT', _client);
